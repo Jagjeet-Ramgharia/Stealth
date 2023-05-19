@@ -1,0 +1,40 @@
+.sidebar_wrapper {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 18rem;
+  height: 100vh;
+  box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 1px 0px 8px 0px rgba(0, 0, 0, 0.15);
+  border-right: 1px solid #e7e9eb;
+  padding: 0.8rem 1.3rem;
+}
+
+.sidebar_wrapper .sidebar_header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1.5px solid #dbdddf;
+  padding-bottom: 1.3rem;
+  gap: 10px;
+}
+
+.sidebar_wrapper .sidebar_header > img {
+  height: 50px;
+  object-fit: cover;
+  margin-bottom: 3px;
+}
+
+/* Menu Tabs */
+.menu_tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  padding: 5px;
+  background: #f0f3fc;
+  color: #404965;
+  cursor: pointer;
+}
+/* end */

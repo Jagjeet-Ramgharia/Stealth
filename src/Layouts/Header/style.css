@@ -1,0 +1,15 @@
+.header_wrpaaer {
+  width: calc(100vw - 18rem);
+  height: 80px;
+  background-color: #ffffff;
+  float: right;
+  color: #404965;
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e7e9eb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4rem;
+}

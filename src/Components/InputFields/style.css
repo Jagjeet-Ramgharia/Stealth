@@ -1,0 +1,25 @@
+.container-input {
+  position: relative;
+}
+
+.input {
+  width: 250px;
+  padding: 10px 0px 10px 40px;
+  border-radius: 5px;
+  border: solid 2px #b8c2e0;
+  transition: all .2s ease-in-out;
+  outline: none;
+  opacity: 0.8;
+}
+
+.container-input svg {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+}
+
+.input:focus {
+  opacity: 1;
+  width: 330px;
+}
