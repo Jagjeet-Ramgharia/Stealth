@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles.css";
 import Heading from "../../Components/Heading";
 import { IoIosSettings } from "react-icons/io";
@@ -12,6 +12,23 @@ import DeleteItem from "../../Components/FileManagerComponents/DeleteItemCompone
 
 function FileManager() {
   const [show,setShow] = useState(false)
+  const [search,setSearch] = useState(null)
+    const [delayedSearch, setDelayedSearch] = useState(null);
+
+  useEffect(()=>{
+       if (search) {
+      if (delayedSearch) {
+        delayedSearch.cancel();
+      }
+      const debounceSearch = setTimeout(async () => {
+      // Logic for search
+      }, 500);
+      setDelayedSearch({
+        cancel: () => clearTimeout(debounceSearch),
+      });
+    }
+  },[search])
+
   const columns = [
     {
       name: "Name",
@@ -82,7 +99,7 @@ function FileManager() {
       </div>
       <div className="details_table">
         <div className="table_search">
-          <Input />
+          <Input value={search} onchange={(e) => setSearch(e?.target?.value)}/>
         </div>
         <div className="details_wrapper">
           <Heading text={"All items"} size="1.6rem" fontWeight={"600"} />
