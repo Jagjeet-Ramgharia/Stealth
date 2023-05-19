@@ -11,7 +11,7 @@ function CheckBox({ checked = [], onclick, options = [] }) {
               <input id={el?.label}  type="checkbox" />
               <div class="checkmark"></div>
             </label>
-            <label style={{ cursor: "pointer" }} htmlFor={el?.label}>
+            <label style={{ cursor: "pointer", fontSize:"17px" }} htmlFor={el?.label}>
               {el?.label}
             </label>
           </div>

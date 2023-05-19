@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import Heading from "../../Components/Heading";
 import { IoIosSettings } from "react-icons/io";
@@ -6,10 +6,12 @@ import { categoriesOne, categoriesTwo } from "../../Constants";
 import Categories from "../../Components/FileManagerComponents/Categories";
 import SelectionTable from "../../Components/CustomTable/CustomTable";
 import Input from "../../Components/InputFields/Input";
-import {BiEdit} from 'react-icons/bi'
-import {AiTwotoneDelete} from 'react-icons/ai'
+import { BiEdit } from "react-icons/bi";
+import { AiTwotoneDelete } from "react-icons/ai";
+import DeleteItem from "../../Components/FileManagerComponents/DeleteItemComponent/DeleteItem";
 
 function FileManager() {
+  const [show,setShow] = useState(false)
   const columns = [
     {
       name: "Name",
@@ -33,54 +35,22 @@ function FileManager() {
     },
     {
       name: "Action",
-      selector: (row) => <div style={{display:"flex", alignItems:"center", gap:"10px"}}>
-        <BiEdit style={{cursor:"pointer"}} color="#a9b4d7" size={25}/>
-        <AiTwotoneDelete style={{cursor:"pointer"}} color="#7d8ec2" size={25}/>
-      </div>,
+      selector: (row) => (
+        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <BiEdit style={{ cursor: "pointer" }} color="#a9b4d7" size={25} />
+          <AiTwotoneDelete
+            onMouseEnter={() => setShow(true)}
+            onMouseLeave={() => setShow(false)}
+            style={{ cursor: "pointer" }}
+            color="#7d8ec2"
+            size={25}
+          />
+        </div>
+      ),
     },
   ];
 
   const data = [
-    {
-      id: 1,
-      title: "Beetlejuice",
-      year: "1988",
-    },
-    {
-      id: 2,
-      title: "Ghostbusters",
-      year: "1984",
-    },
-    {
-      id: 1,
-      title: "Beetlejuice",
-      year: "1988",
-    },
-    {
-      id: 2,
-      title: "Ghostbusters",
-      year: "1984",
-    },
-    {
-      id: 1,
-      title: "Beetlejuice",
-      year: "1988",
-    },
-    {
-      id: 2,
-      title: "Ghostbusters",
-      year: "1984",
-    },
-    {
-      id: 1,
-      title: "Beetlejuice",
-      year: "1988",
-    },
-    {
-      id: 2,
-      title: "Ghostbusters",
-      year: "1984",
-    },
     {
       id: 1,
       title: "Beetlejuice",
@@ -111,9 +81,7 @@ function FileManager() {
         />
       </div>
       <div className="details_table">
-        <div
-          style={{ width: "100%", display: "flex", justifyContent: "flex-end" }}
-        >
+        <div className="table_search">
           <Input />
         </div>
         <div className="details_wrapper">
