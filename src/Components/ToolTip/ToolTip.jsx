@@ -2,7 +2,6 @@ import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 
-
 const CustomWidthTooltip = styled(
   ({
     className,
@@ -11,10 +10,16 @@ const CustomWidthTooltip = styled(
     width,
     disableHoverListener,
     arrow,
-    // placement,
+    placement,
     ...props
   }) => (
-    <Tooltip title={title} {...props} placement="top" arrow classes={{ popper: className }}>
+    <Tooltip
+      title={title}
+      {...props}
+      placement={placement}
+      arrow
+      classes={{ popper: className }}
+    >
       {children}
     </Tooltip>
   )
@@ -26,11 +31,10 @@ const CustomWidthTooltip = styled(
     fontSize: "11px",
     letterSpacing: "0.2px",
     color: "#E6E7ED",
-    background:
-      "#ffffff",
+    background: "#ffffff",
   },
   [`& .${tooltipClasses.arrow}`]: {
-    color: "#E6E7ED",
+    color: "#d5d5d8",
     fontSize: "20px",
   },
   [`& .${tooltipClasses.tooltip}`]: {

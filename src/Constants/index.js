@@ -6,9 +6,10 @@ export const LayoutColors = {
   themeMenuTabs: "#f0f3fc",
   themeBg: "#eef3fa",
   checkBoxBorder: "#aab6db",
-  inputFieldBackground:"#fafafa",
-  borderColors:"#dfdfe1",
-  HeadingTextColorL:"#63719c"
+  inputFieldBackground: "#fafafa",
+  borderColors: "#dfdfe1",
+  HeadingTextColorL: "#63719c",
+  themeTableText: "#7e83c5",
 };
 
 export const categoriesOne = [
